@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Show which are the directories using most disk space
+#
 cd /
 du -sh * --exclude=proc/* | sort -rh | head -8
 printf '%50s\n' | tr ' ' -
