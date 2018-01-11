@@ -45,6 +45,10 @@
 class sysadmins {
     class { 'fail2ban': }
     package {'net-tools': ensure => 'installed' }
+    class { 'locales':
+        default_locale  => 'en_US.UTF-8',
+        locales         => ['en_US.UTF-8 UTF-8'],
+    }
     
     file {'/usr/local/bin/diskusage':
         source => "puppet:///modules/sysadmins/usr/local/bin/diskusage",
