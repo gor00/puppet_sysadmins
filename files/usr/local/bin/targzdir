@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ ! -z "$1" ]; then
+    tar -zcvf $(basename $1).tar.gz $1
+else
+    echo "* This script will compress a whole directory *"
+    echo "* you need to pass the directory as argument  *"
+    echo "* example:                                    *"
+    echo -e "* \t ${0##*/} my_directory                *"
+fi
+exit 0
